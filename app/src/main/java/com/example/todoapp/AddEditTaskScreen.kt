@@ -6,7 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -57,7 +57,7 @@ fun AddEditTaskScreen(navController: NavController, viewModel: TaskViewModel, ta
                 title = { Text(if (taskId == null) "Add Task" else "Edit Task", color = White) },
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
-                        Icon(Icons.Filled.ArrowBack, "Back", tint = White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = White)
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = RoyalBlue)

@@ -4,10 +4,10 @@ import kotlinx.coroutines.flow.Flow
 
 class TaskRepository(private val taskDao: TaskDao) {
 
-    val allTasks: Flow<List<Task>> = taskDao.getAllTasks()
+    fun getAllTasksForUser(userId: String): Flow<List<Task>> = taskDao.getAllTasksForUser(userId)
 
-    fun getTaskById(taskId: Int): Flow<Task> {
-        return taskDao.getTaskById(taskId)
+    fun getTaskByIdForUser(taskId: Int, userId: String): Flow<Task> {
+        return taskDao.getTaskByIdForUser(taskId, userId)
     }
 
     suspend fun insert(task: Task) {
