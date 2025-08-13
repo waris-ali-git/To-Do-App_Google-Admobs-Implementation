@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import com.google.firebase.auth.FirebaseAuth
+import com.example.todoapp.ads.BannerAdView
 import com.example.todoapp.ui.theme.DarkBlue
 import com.example.todoapp.ui.theme.RoyalBlue
 import com.example.todoapp.ui.theme.ToDoAppTheme
@@ -81,7 +82,8 @@ fun LoginScreen() {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(horizontal = 32.dp),
+                .padding(horizontal = 32.dp)
+                .padding(bottom = 50.dp), // Add bottom padding for banner ad
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -234,6 +236,15 @@ fun LoginScreen() {
                     context.startActivity(Intent(context, RegistrationActivity::class.java))
                 }
             )
+        }
+        
+        // Banner Ad at the bottom
+        Box(
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
+                .fillMaxWidth()
+        ) {
+            BannerAdView()
         }
     }
 }

@@ -43,6 +43,15 @@ android {
 
 dependencies {
 
+
+    // Firebase Ads and AdMob
+    implementation("com.google.firebase:firebase-core:21.1.1")
+    implementation("com.google.firebase:firebase-database:22.0.0")
+    implementation("com.google.android.gms:play-services-ads:23.6.0")
+    implementation("androidx.lifecycle:lifecycle-process:2.8.7")
+
+
+    //default
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

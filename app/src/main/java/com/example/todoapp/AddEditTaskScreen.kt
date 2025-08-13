@@ -18,6 +18,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.todoapp.Priority
+import com.example.todoapp.ads.BannerAdView
 import com.example.todoapp.ui.theme.Black
 import com.example.todoapp.ui.theme.DarkBlue
 import com.example.todoapp.ui.theme.RoyalBlue
@@ -62,6 +63,9 @@ fun AddEditTaskScreen(navController: NavController, viewModel: TaskViewModel, ta
                 },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = RoyalBlue)
             )
+        },
+        bottomBar = {
+            BannerAdView()
         }
     ) { padding ->
         Box(

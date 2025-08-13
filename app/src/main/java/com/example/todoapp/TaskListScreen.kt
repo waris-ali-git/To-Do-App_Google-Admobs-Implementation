@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.outlined.Circle
 import androidx.compose.material3.*
@@ -28,6 +29,7 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.todoapp.ads.BannerAdView
 import com.example.todoapp.ui.theme.Black
 import com.example.todoapp.ui.theme.DarkBlue
 import com.example.todoapp.ui.theme.RoyalBlue
@@ -39,7 +41,12 @@ import com.example.todoapp.ui.theme.LowPriorityColor
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TaskListScreen(navController: NavController, viewModel: TaskViewModel) {
+fun TaskListScreen(
+    navController: NavController, 
+    viewModel: TaskViewModel,
+    onNavigateToAddEdit: () -> Unit = { navController.navigate("add_edit_task") },
+    onNavigateToProfile: () -> Unit = { navController.navigate("profile") }
+) {
     val context = LocalContext.current
     val tasks by viewModel.allTasks.observeAsState(initial = emptyList())
     var showDeleteDialog by remember { mutableStateOf<Task?>(null) }
@@ -59,6 +66,9 @@ fun TaskListScreen(navController: NavController, viewModel: TaskViewModel) {
                     }
                 },
                 actions = {
+                    IconButton(onClick = onNavigateToProfile) {
+                        Icon(Icons.Filled.Person, "Profile", tint = White)
+                    }
                     IconButton(
                         onClick = {
                             viewModel.logout()
@@ -74,12 +84,15 @@ fun TaskListScreen(navController: NavController, viewModel: TaskViewModel) {
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { navController.navigate("add_edit_task") },
+                onClick = onNavigateToAddEdit,
                 containerColor = RoyalBlue,
                 contentColor = White
             ) {
                 Icon(Icons.Filled.Add, "Add Task")
             }
+        },
+        bottomBar = {
+            BannerAdView()
         }
     ) { padding ->
         Box(
