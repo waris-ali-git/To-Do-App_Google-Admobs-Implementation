@@ -33,27 +33,45 @@ Monetization is handled through **Google AdMob Ads** for a production-ready mobi
 
 ---
 
-## 📸 App Screenshots
-<p align="center">
-  <img src="Login Page.jpg" width="30%" style="border-radius:15px; margin:10px;"/>
-  <img src="Home Page.jpg" width="30%" style="border-radius:15px; margin:10px;"/>
-  <img src="Create Account.jpg" width="30%" style="border-radius:15px; margin:10px;"/>
-</p>
+## 📸 App Screenshots  
 
-<p align="center">
-  <img src="Add Task.jpg" width="40%" style="border-radius:15px; margin:10px;"/>
-  <img src="Test Add.jpg" width="40%" style="border-radius:15px; margin:10px;"/>
-</p>
+<table align="center">
+  <tr>
+    <td align="center">
+      <img src="Login Page.jpg" alt="Login Page" width="250"/><br/>
+      <b>Login Page</b>
+    </td>
+    <td align="center">
+      <img src="Home Page.jpg" alt="Home Page" width="250"/><br/>
+      <b>Home Page</b>
+    </td>
+    <td align="center">
+      <img src="Create Account.jpg" alt="Create Account" width="250"/><br/>
+      <b>Create Account</b>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="Add Task.jpg" alt="Add Task" width="250"/><br/>
+      <b>Add Task</b>
+    </td>
+    <td align="center">
+      <img src="Test Add.jpg" alt="Test Add" width="250"/><br/>
+      <b>Test Add</b>
+    </td>
+    <td></td>
+  </tr>
+</table>
 
 ---
 
 ## 💰 Google AdMob Integration
 
-| Ad Type            | Where it Appears                     | Purpose                              |
-|--------------------|--------------------------------------|--------------------------------------|
-| 📍 **Banner Ads**  | Bottom of key screens                | Non-intrusive, steady monetization   |
-| 🚀 **Interstitial**| After adding/completing important tasks | Boosted engagement + revenue        |
-| ⚡ **Optimized**   | Smart placement                      | Ensures smooth user experience       |
+| Ad Type            | Where it Appears                        | Purpose                              |
+|--------------------|-----------------------------------------|--------------------------------------|
+| 📍 **Banner Ads**  | Bottom of key screens                   | Non-intrusive, steady monetization   |
+| 🚀 **Interstitial**| After adding/completing important tasks | Boosted engagement + revenue         |
+| ⚡ **Optimized**   | Smart placement                         | Ensures smooth user experience       |
 
 ```kotlin
 // Example AdMob Implementation (Banner)
